@@ -1,0 +1,20 @@
+{
+  "name": "hgdfhjvysger",
+  "version": "1.0.0",
+  "description": "Provides functions for randomizing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sertdfyguhi/hgdfhjvysger.git"
+  },
+  "keywords": [
+    "random",
+    "randomize",
+    "randomizing"
+  ],
+  "author": "sertdfyguhi",
+  "license": "ISC"
+}
