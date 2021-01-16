@@ -21,7 +21,7 @@ hgdfhjvysger.randomColor()
 
 ## Documentation
 
-Go to [https://github.com/sertdfyguhi/hgdfhjvysger/blob/master/DOCS.md](https://github.com/sertdfyguhi/hgdfhjvysger/blob/master/DOCS.md)
+Go to [https://github.com/sertdfyguhi/hgdfhjvysger/blob/main/DOCS.md](https://github.com/sertdfyguhi/hgdfhjvysger/blob/main/DOCS.md)
 
 ## Author
 
@@ -32,4 +32,4 @@ Go to [https://github.com/sertdfyguhi/hgdfhjvysger/blob/master/DOCS.md](https://
 
 ## Changelog
 
-Go to [https://github.com/sertdfyguhi/hgdfhjvysger/blob/master/CHANGELOG.md](https://github.com/sertdfyguhi/hgdfhjvysger/blob/master/CHANGELOG.md)
+Go to [https://github.com/sertdfyguhi/hgdfhjvysger/blob/main/CHANGELOG.md](https://github.com/sertdfyguhi/hgdfhjvysger/blob/main/CHANGELOG.md)
