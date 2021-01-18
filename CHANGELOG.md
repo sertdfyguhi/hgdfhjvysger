@@ -9,3 +9,10 @@ Released 2021-1-16
 Released 2021-1-16
 
 - Fixed url in read me.
+
+# 2.0.0
+
+Released 2021-1-18
+
+- Fixed some bugs.
+- Added more functions.
