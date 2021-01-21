@@ -16,3 +16,9 @@ Released 2021-1-18
 
 - Fixed some bugs.
 - Added more functions.
+
+# 2.1.0
+
+Released 2021-1-21
+
+- Added more functions.

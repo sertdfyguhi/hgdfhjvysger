@@ -117,3 +117,27 @@ hgdfhjvysger.randomEmail(domain /*type: string*/)
 ## Description
 
 `randomEmail` returns a random email.
+
+# coinFlip
+
+## Usage
+
+```js
+hgdfhjvysger.coinFlip()
+```
+
+## Description
+
+`coinFlip` flips a coin.
+
+# randomFalsy
+
+## Usage
+
+```js
+hgdfhjvysger.randomFalsy()
+```
+
+## Description
+
+`randomEmail` returns a random falsy value.

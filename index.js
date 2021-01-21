@@ -85,6 +85,14 @@ function randomEmail(domain) {
   return randomString(randomNum(12, 4), 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') + '@' + domain
 }
 
+function coinFlip() {
+  return randomFromArray(['heads', 'tails'])
+}
+
+function randomFalsy() {
+  return randomFromArray([false, 0, '', null, undefined, NaN])
+}
+
 module.exports.randomString = randomString;
 module.exports.randomNum = randomNum;
 module.exports.randomColor = randomColor;
@@ -94,4 +102,6 @@ module.exports.randomFromString = randomFromString;
 module.exports.randomBool = randomBool;
 module.exports.randomFloat = randomFloat;
 module.exports.randomGender = randomGender;
-module.exports.randomEmal = randomEmail;
+module.exports.randomEmail = randomEmail;
+module.exports.coinFlip = coinFlip;
+module.exports.randomFalsy = randomFalsy;
