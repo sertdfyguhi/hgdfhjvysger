@@ -72,15 +72,27 @@ function randomGender(extra = []) {
   return randomFromArray(extra)
 }
 
+function randomDomain(domains = ['gov', 'com', 'xyz', 'net', 'org', 'uk', 'org', 'hk', 'edu', 'io', 'biz', 'info', 'eu', 'co', 'mil', 'es', 'tv', 'me', 'mobi', 'id', 'it', 'int', 'ru', 'cc', 'ch', 'arpa', 'de', 'help', 'am', 'ai', 'us', 'ws', 'pt', 'ca', 'be', 'md', 'fm', 'sc', 'nu', 'au']) {
+  if (typeof domains != 'string') {
+    if (Array.isArray(domains) == false) {
+      throw new TypeError('domains must be a string or an array')
+    }
+  }
+  if (typeof domains == 'string') {
+    return randomString(randomNum(15, 3), 'abcdefghijklmnopqrstuvwxyz1234567890-_') + '.' + domains
+  } else if (Array.isArray(domains) == true) {
+    return randomString(randomNum(15, 3), 'abcdefghijklmnopqrstuvwxyz1234567890-_') + '.' + randomFromArray(domains)
+  }
+}
+
 function randomEmail(domain) {
   if (typeof domain != 'string') {
     if (typeof domain != 'undefined') {
       throw new TypeError('domain must be a string')
     }
   }
-  const domains = ['gov', 'com', 'xyz', 'net', 'org', 'uk', 'org', 'hk', 'edu', 'io', 'biz', 'info', 'eu', 'co', 'mil', 'es', 'tv', 'me', 'mobi', 'id', 'it', 'int', 'ru', 'cc', 'ch', 'arpa', 'de', 'help', 'am', 'ai', 'us', 'ws', 'pt', 'ca', 'be', 'md', 'fm', 'sc', 'nu', 'au']
   if (typeof domain == 'undefined') {
-    domain = randomString(randomNum(10, 6), 'abcdefghijklmnopqrstuvwxyz') + '.' + randomFromArray(domains)
+    domain = randomDomain()
   }
   return randomString(randomNum(12, 4), 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') + '@' + domain
 }
@@ -91,6 +103,10 @@ function coinFlip() {
 
 function randomFalsy() {
   return randomFromArray([false, 0, '', null, undefined, NaN])
+}
+
+function randomIP() {
+  return `${randomNum(255)}.${randomNum(255)}.${randomNum(255)}.${randomNum(255)}`
 }
 
 module.exports.randomString = randomString;
@@ -105,3 +121,5 @@ module.exports.randomGender = randomGender;
 module.exports.randomEmail = randomEmail;
 module.exports.coinFlip = coinFlip;
 module.exports.randomFalsy = randomFalsy;
+module.exports.randomDomain = randomDomain;
+module.exports.randomIP = randomIP;

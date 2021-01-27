@@ -22,3 +22,9 @@ Released 2021-1-18
 Released 2021-1-21
 
 - Added more functions.
+
+# 2.2.0
+
+Released 2021-1-27
+
+- Added 2 more functions.

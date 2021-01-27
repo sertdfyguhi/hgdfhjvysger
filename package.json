@@ -1,6 +1,6 @@
 {
   "name": "hgdfhjvysger",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Provides functions for randomizing.",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,5 @@
     "randomizing"
   ],
   "author": "sertdfyguhi",
-  "license": "ISC"
+  "license": "MIT"
 }

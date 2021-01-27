@@ -141,3 +141,29 @@ hgdfhjvysger.randomFalsy()
 ## Description
 
 `randomEmail` returns a random falsy value.
+
+# randomDomain
+
+## Usage
+
+```js
+hgdfhjvysger.randomDomain(
+  domains /*type: array, default: ['gov', 'com', 'xyz', 'net', 'org', 'uk', 'org', 'hk', 'edu', 'io', 'biz', 'info', 'eu', 'co', 'mil', 'es', 'tv', 'me', 'mobi', 'id', 'it', 'int', 'ru', 'cc', 'ch', 'arpa', 'de', 'help', 'am', 'ai', 'us', 'ws', 'pt', 'ca', 'be', 'md', 'fm', 'sc', 'nu', 'au']*/
+)
+```
+
+## Description
+
+`randomDomain` returns a random domain.
+
+# randomIP
+
+## Usage
+
+```js
+hgdfhjvysger.randomIP()
+```
+
+## Description
+
+`randomIP` returns a ip address.
