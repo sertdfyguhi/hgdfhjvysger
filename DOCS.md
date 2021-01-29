@@ -39,7 +39,7 @@ hgdfhjvysger.randomNum(max /*type: number*/, min /*type: number, default: 0*/)
 ## Usage
 
 ```js
-hgdfhjvysger.randomColor(type /*type: string, options: hex, rgb, hsl*/)
+hgdfhjvysger.randomColor(type /*type: string, options: hex, rgb, hsl, default: hex*/)
 ```
 
 ## Description
