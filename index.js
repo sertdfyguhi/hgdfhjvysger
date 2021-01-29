@@ -33,13 +33,24 @@ function randomNum(max, min = 0) {
   return num
 }
 
-function randomColor() {
-  const chars = 'abcdef1234567890'
-  let color = '#'
-  for (let i = 0; i < 6; i++) {
-    color += chars[randomNum(chars.length)]
+function randomColor(type = 'hex') {
+  if (typeof type != 'string') {
+    throw new TypeError('type must be a string')
   }
-  return color
+  if (type == 'hex') {
+    const chars = 'abcdef1234567890'
+    let color = '#'
+    for (let i = 0; i < 6; i++) {
+      color += chars[randomNum(chars.length)]
+    }
+    return color
+  } else if (type == 'rgb') {
+    return `rgb(${randomNum(255)}, ${randomNum(255)}, ${randomNum(255)})`
+  } else if (type == 'hsl') {
+    return `hsl(${randomNum(360)}, ${randomNum(100)}%, ${randomNum(100)}%)`
+  } else {
+    throw new TypeError('invalid type')
+  }
 }
 
 function randomAlphabet() {
@@ -109,6 +120,29 @@ function randomIP() {
   return `${randomNum(255)}.${randomNum(255)}.${randomNum(255)}.${randomNum(255)}`
 }
 
+function shuffleArray(array) {
+  if (Array.isArray(array) == false) {
+    throw new TypeError('array must be an array')
+  }
+  let alr = []
+  let a = []
+  while (true) {
+    let n = randomNum(array.length - 1)
+    if (!alr.includes(n)) {
+      a.push(array[n])
+      alr.push(n)
+    }
+    if (alr.length == array.length) {
+      break
+    }
+  }
+  return a
+}
+
+function randomTwitterUser() {
+  return `@${randomString(randomNum(15, 4), 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_')}`
+}
+
 module.exports.randomString = randomString;
 module.exports.randomNum = randomNum;
 module.exports.randomColor = randomColor;
@@ -123,3 +157,5 @@ module.exports.coinFlip = coinFlip;
 module.exports.randomFalsy = randomFalsy;
 module.exports.randomDomain = randomDomain;
 module.exports.randomIP = randomIP;
+module.exports.shuffleArray = shuffleArray;
+module.exports.randomTwitterUser = randomTwitterUser;

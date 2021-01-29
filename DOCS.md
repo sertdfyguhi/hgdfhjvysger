@@ -39,12 +39,12 @@ hgdfhjvysger.randomNum(max /*type: number*/, min /*type: number, default: 0*/)
 ## Usage
 
 ```js
-hgdfhjvysger.randomColor()
+hgdfhjvysger.randomColor(type /*type: string, options: hex, rgb, hsl*/)
 ```
 
 ## Description
 
-`randomColor` returns a random color(hex code).
+`randomColor` returns a random color(hex, rgb, hsl).
 
 # randomAlphabet
 
@@ -167,3 +167,27 @@ hgdfhjvysger.randomIP()
 ## Description
 
 `randomIP` returns a ip address.
+
+# shuffleArray
+
+## Usage
+
+```js
+hgdfhjvysger.shuffleArray(array /*type: array*/)
+```
+
+## Description
+
+`shuffleArray` shuffles `array` and returns it.
+
+# randomTwitterUser
+
+## Usage
+
+```js
+hgdfhjvysger.randomTwitterUser()
+```
+
+## Description
+
+`randomTwitterUser` returns a random twitter username.

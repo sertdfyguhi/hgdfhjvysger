@@ -28,3 +28,10 @@ Released 2021-1-21
 Released 2021-1-27
 
 - Added 2 more functions.
+
+# 2.3.0
+
+Released 2021-1-29
+
+- Added 2 more functions.
+- Implemented new argument `type` to `randomColor`.
