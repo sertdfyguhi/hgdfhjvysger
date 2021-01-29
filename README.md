@@ -6,7 +6,17 @@ hgdfhjvysger provides functions for randomizing.
 
 ## Installation
 
-`npm install hgdfhjvysger`
+**npm**:
+
+```plain
+npm install hgdfhjvysger
+```
+
+**html/vanillajs**:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/hgdfhjvysger"></script>
+```
 
 ## Example
 
