@@ -143,6 +143,45 @@ function randomTwitterUser() {
   return `@${randomString(randomNum(15, 4), 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_')}`
 }
 
+function randomTime(type = 24) {
+  if (typeof type != 'number') {
+    throw new TypeError('type must be a number')
+  }
+  if (type == 24) {
+    let hour = String(randomNum(23))
+    let min = String(randomNum(59))
+    if (hour < 10) {
+      hour = `0${hour}`
+    }
+    if (min < 10) {
+      min = `0${min}`
+    }
+    return `${hour}:${min}`
+  } else if (type == 12) {
+    let min = String(randomNum(59))
+    let hour = String(randomNum(12, 1))
+    let ampm = randomFromArray(['a.m.', 'p.m.'])
+    if (min < 10) {
+      min = `0${min}`
+    }
+    return `${hour}:${min} ${ampm}`
+  } else {
+    throw new TypeError('invalid type')
+  }
+}
+
+function shuffleString(string) {
+  if (typeof string !== 'string') {
+    throw new TypeError('string must be a string')
+  }
+  return ''.join(shuffleArray(string.split('')))
+}
+
+function randomPalindrome() {
+  const str = randomString(randomNum(7, 1), 'abcdefghijklmnopqrstuvwxyz')
+  return str + randomFromString('abcdefghijklmnopqrstuvwxyz') + str.split('').reverse().join('')
+}
+
 module.exports.randomString = randomString;
 module.exports.randomNum = randomNum;
 module.exports.randomColor = randomColor;
@@ -159,3 +198,6 @@ module.exports.randomDomain = randomDomain;
 module.exports.randomIP = randomIP;
 module.exports.shuffleArray = shuffleArray;
 module.exports.randomTwitterUser = randomTwitterUser;
+module.exports.randomTime = randomTime;
+module.exports.shuffleString = shuffleString;
+module.exports.randomPalindrome = randomPalindrome;

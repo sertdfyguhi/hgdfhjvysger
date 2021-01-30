@@ -39,7 +39,9 @@ hgdfhjvysger.randomNum(max /*type: number*/, min /*type: number, default: 0*/)
 ## Usage
 
 ```js
-hgdfhjvysger.randomColor(type /*type: string, options: hex, rgb, hsl, default: hex*/)
+hgdfhjvysger.randomColor(
+  type /*type: string, options: hex, rgb, hsl, default: hex*/
+)
 ```
 
 ## Description
@@ -191,3 +193,39 @@ hgdfhjvysger.randomTwitterUser()
 ## Description
 
 `randomTwitterUser` returns a random twitter username.
+
+# randomTime
+
+## Usage
+
+```js
+hgdfhjvysger.randomTime(type /*type: number, options: 24, 12, default: 24*/)
+```
+
+## Description
+
+`randomTime` returns a random time.
+
+# shuffleString
+
+## Usage
+
+```js
+hgdfhjvysger.shuffleString(string /*type: string*/)
+```
+
+## Description
+
+`shuffleString` shuffles `string` and returns it.
+
+# randomPalindrome
+
+## Usage
+
+```js
+hgdfhjvysger.randomPalindrome()
+```
+
+## Description
+
+`randomPalindrome` returns a random palindrome.
