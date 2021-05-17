@@ -41,7 +41,8 @@ function randomColor(type = 'hex') {
     const chars = 'abcdef1234567890'
     let color = '#'
     for (let i = 0; i < 6; i++) {
-      color += chars[randomNum(chars.length)]
+			const i = randomNum(chars.length - 1) 
+      color += chars[i]
     }
     return color
   } else if (type == 'rgb') {
@@ -182,22 +183,24 @@ function randomPalindrome() {
   return str + randomFromString('abcdefghijklmnopqrstuvwxyz') + str.split('').reverse().join('')
 }
 
-module.exports.randomString = randomString;
-module.exports.randomNum = randomNum;
-module.exports.randomColor = randomColor;
-module.exports.randomFromArray = randomFromArray;
-module.exports.randomAlphabet = randomAlphabet;
-module.exports.randomFromString = randomFromString;
-module.exports.randomBool = randomBool;
-module.exports.randomFloat = randomFloat;
-module.exports.randomGender = randomGender;
-module.exports.randomEmail = randomEmail;
-module.exports.coinFlip = coinFlip;
-module.exports.randomFalsy = randomFalsy;
-module.exports.randomDomain = randomDomain;
-module.exports.randomIP = randomIP;
-module.exports.shuffleArray = shuffleArray;
-module.exports.randomTwitterUser = randomTwitterUser;
-module.exports.randomTime = randomTime;
-module.exports.shuffleString = shuffleString;
-module.exports.randomPalindrome = randomPalindrome;
+module.exports = {
+  randomString: randomString,
+  randomNum: randomNum,
+  randomColor: randomColor,
+  randomFromArray: randomFromArray,
+  randomAlphabet: randomAlphabet,
+  randomFromString: randomFromString,
+  randomBool: randomBool,
+  randomFloat: randomFloat,
+  randomGender: randomGender,
+  randomEmail: randomEmail,
+  coinFlip: coinFlip,
+  randomFalsy: randomFalsy,
+  randomDomain: randomDomain,
+  randomIP: randomIP,
+  shuffleArray: shuffleArray,
+  randomTwitterUser: randomTwitterUser,
+  randomTime: randomTime,
+  shuffleString: shuffleString,
+  randomPalindrome: randomPalindrome,
+}
