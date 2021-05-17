@@ -1,4 +1,4 @@
-function randomString(length, chars) {
+function randomString(length, chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
   if (typeof length != 'number') {
     throw new TypeError('length must be a number')
   }
