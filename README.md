@@ -1,18 +1,17 @@
 # hgdfhjvysger
 
 ## What is this?
-
-hgdfhjvysger provides functions for randomizing.
+pseudo random functions
 
 ## Installation
 
 **npm**:
 
-```plain
+```
 npm install hgdfhjvysger
 ```
 
-**html/vanillajs**:
+**html / vanilla js**:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/hgdfhjvysger"></script>
@@ -23,24 +22,16 @@ npm install hgdfhjvysger
 ```js
 const hgdfhjvysger = require('hgdfhjvysger')
 
-hgdfhjvysger.randomString(5, 'abcde')
-hgdfhjvysger.randomFromArray(['hello', 'help', 'please', 'two'])
-hgdfhjvysger.randomNum(5, 1)
-hgdfhjvysger.randomColor()
-hgdfhjvysger.coinFlip()
+hgdfhjvysger.string(5, 'abcde') // returns string with 5 random characters from 'abcde'
+hgdfhjvysger.fromArray([1, 2, 3, 4, 5]) // returns random value from [1, 2, 3, 4, 5]
+hgdfhjvysger.number(5) // returns random number from
+hgdfhjvysger.hexColor() // returns a random hex color
+hgdfhjvysger.coin() // returns 'heads' or 'tails'
 ```
 
-## Documentation
-
-Go to https://github.com/sertdfyguhi/hgdfhjvysger/blob/main/DOCS.md
-
-## Author
-
-**sertdfyguhi**
-
+## Links
 - [Github](https://github.com/sertdfyguhi)
-- Discord: hdwyx#5971
+- Discord: sertdfyguhi#5971
 
 ## Changelog
-
-Go to https://github.com/sertdfyguhi/hgdfhjvysger/blob/main/CHANGELOG.md
+https://github.com/sertdfyguhi/hgdfhjvysger/blob/main/CHANGELOG.md
