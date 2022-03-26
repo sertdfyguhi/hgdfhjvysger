@@ -2,7 +2,7 @@
  * Random number from max to min.
  * @param {number} max 
  * @param {number} min 
- * @returns {number}
+ * @returns {number} random number from max to min
  */
 function number(max, min = 0) {
   if (typeof min != 'number' || typeof max != 'number') {
@@ -19,7 +19,7 @@ function number(max, min = 0) {
  * Random string from chars.
  * @param {number} length 
  * @param {string} chars 
- * @returns {string}
+ * @returns {string} random string from chars
  */
 function string(length, chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
   if (typeof length != 'number') {
@@ -33,7 +33,7 @@ function string(length, chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTU
 /**
  * Random value from array.
  * @param {array} array 
- * @returns {any}
+ * @returns {any} random value from array
  */
 function fromArray(array) {
   if (!Array.isArray(array)) {
@@ -44,7 +44,7 @@ function fromArray(array) {
 
 /**
  * Random hex color.
- * @returns {string}
+ * @returns {string} hex color
  */
 function hexColor() {
   return '#' + string(6, 'abcdef1234567890')
@@ -52,7 +52,7 @@ function hexColor() {
 
 /**
  * Random RGB color in the format of css.
- * @returns {string}
+ * @returns {string} RGB color in the format of css
  */
 function rgb() {
   return `rgb(${number(255)}, ${number(255)}, ${number(255)})`
@@ -60,7 +60,7 @@ function rgb() {
 
 /**
  * Random HSL color in the format of css.
- * @returns {string}
+ * @returns {string} HSL color in the format of css
  */
 function hsl() {
   return `hsl(${number(359)}, ${number(100)}%, ${number(100)}%)`
@@ -68,7 +68,7 @@ function hsl() {
 
 /**
  * Random alphabet.
- * @returns {string}
+ * @returns {string} any alphabet lowercase or uppercase
  */
 function alphabet() {
   return fromArray('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split())
@@ -76,7 +76,7 @@ function alphabet() {
 
 /**
  * Random boolean.
- * @returns {boolean}
+ * @returns {boolean} true or false
  */
 function boolean() {
   return fromArray([true, false])
@@ -86,7 +86,7 @@ function boolean() {
  * Random float from min to max.
  * @param {number} max 
  * @param {number} min 
- * @returns {number}
+ * @returns {number} float from min to max
  */
 function float(max, min = 0) {
   return number(max, min) + Math.random()
@@ -95,7 +95,7 @@ function float(max, min = 0) {
 /**
  * Random domain name.
  * @param {array} domains 
- * @returns {string}
+ * @returns {string} domain name
  */
 function domainName(domains = ['gov', 'com', 'xyz', 'net', 'org', 'uk', 'org', 'hk', 'edu', 'io', 'biz', 'info', 'eu', 'co', 'mil', 'es', 'tv', 'me', 'mobi', 'id', 'it', 'int', 'ru', 'cc', 'ch', 'arpa', 'de', 'help', 'am', 'ai', 'us', 'ws', 'pt', 'ca', 'be', 'md', 'fm', 'sc', 'nu', 'au']) {
   if (!Array.isArray(domains)) {
@@ -107,7 +107,7 @@ function domainName(domains = ['gov', 'com', 'xyz', 'net', 'org', 'uk', 'org', '
 /**
  * Random email with domain 
  * @param {string} domain 
- * @returns {string}
+ * @returns {string} email
  */
 function email(domain) {
   if (typeof domain != 'string') {
@@ -118,14 +118,14 @@ function email(domain) {
 
 /**
  * Flips a coin.
- * @returns {string}
+ * @returns {string} heads or tails
  */
 function coin() {
   return fromArray(['heads', 'tails'])
 }
 /**
  * Random IP address.
- * @returns {string}
+ * @returns {string} ip address
  */
 function ip() {
   return `${number(255)}.${number(255)}.${number(255)}.${number(255)}`
@@ -134,7 +134,7 @@ function ip() {
 /**
  * Shuffles array.
  * @param {array} array 
- * @returns {array}
+ * @returns {array} array
  */
 function shuffleArray(array) {
   if (!Array.isArray(array)) {
@@ -150,7 +150,7 @@ function shuffleArray(array) {
 
 /**
  * Random twitter user.
- * @returns {string}
+ * @returns {string} twitter username
  */
 function twitterUser() {
   return `@${string(number(15, 4), 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_')}`

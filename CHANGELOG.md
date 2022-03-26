@@ -1,3 +1,9 @@
+# 3.0.1
+
+Released 2022-3-26
+
+- Added descriptions to JSDoc.
+
 # 3.0.0
 
 Released 2022-3-26

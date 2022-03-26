@@ -1,6 +1,6 @@
 {
   "name": "hgdfhjvysger",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Provides functions for randomizing.",
   "main": "index.js",
   "scripts": {
