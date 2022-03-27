@@ -156,6 +156,16 @@ function twitterUser() {
   return `@${string(number(15, 4), 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_')}`
 }
 
+/**
+ * Random Date object between 0 and the time right now.
+ * @param {number} max
+ * @param {number} min
+ * @returns {Date} date object
+ */
+function date() {
+  return new Date(number(Date.now(), 0))
+}
+
 module.exports = {
   number,
   string,
@@ -172,4 +182,5 @@ module.exports = {
   ip,
   shuffleArray,
   twitterUser,
+  date
 }
