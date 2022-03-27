@@ -1,45 +1,90 @@
+const DOMAINS = [
+  'gov',
+  'com',
+  'xyz',
+  'net',
+  'org',
+  'uk',
+  'org',
+  'hk',
+  'edu',
+  'io',
+  'biz',
+  'info',
+  'eu',
+  'co',
+  'mil',
+  'es',
+  'tv',
+  'me',
+  'mobi',
+  'id',
+  'it',
+  'int',
+  'ru',
+  'cc',
+  'ch',
+  'arpa',
+  'de',
+  'help',
+  'am',
+  'ai',
+  'us',
+  'ws',
+  'pt',
+  'ca',
+  'be',
+  'md',
+  'fm',
+  'sc',
+  'nu',
+  'au',
+]
+
 /**
  * Random number from max to min.
- * @param {number} max 
- * @param {number} min 
+ * @param {number} max
+ * @param {number} min
  * @returns {number} random number from max to min
  */
 function number(max, min = 0) {
   if (typeof min != 'number' || typeof max != 'number') {
     throw new TypeError('min and max must be a number')
   }
-  return Math.floor(
-    Math.random() * (
-      Math.floor(max) - Math.ceil(min) + 1
-    )
-  ) + Math.ceil(min)
+  return (
+    Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
+    Math.ceil(min)
+  )
 }
 
 /**
  * Random string from chars.
- * @param {number} length 
- * @param {string} chars 
+ * @param {number} length
+ * @param {string} chars
  * @returns {string} random string from chars
  */
-function string(length, chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
+function string(
+  length,
+  chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+) {
   if (typeof length != 'number') {
     throw new TypeError('length must be a number')
   } else if (typeof chars != 'string') {
     throw new TypeError('chars must be a string')
   }
-  return Array.from({ length: length }, () => chars[number(chars.length-1)])
+  return Array.from({ length: length }, () => chars[number(chars.length - 1)])
 }
 
 /**
  * Random value from array.
- * @param {array} array 
+ * @param {array} array
  * @returns {any} random value from array
  */
 function fromArray(array) {
   if (!Array.isArray(array)) {
     throw new TypeError('array must be an array')
   }
-  return array[number(array.length-1)]
+  return array[number(array.length - 1)]
 }
 
 /**
@@ -71,7 +116,9 @@ function hsl() {
  * @returns {string} any alphabet lowercase or uppercase
  */
 function alphabet() {
-  return fromArray('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split())
+  return fromArray(
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split()
+  )
 }
 
 /**
@@ -84,8 +131,8 @@ function boolean() {
 
 /**
  * Random float from min to max.
- * @param {number} max 
- * @param {number} min 
+ * @param {number} max
+ * @param {number} min
  * @returns {number} float from min to max
  */
 function float(max, min = 0) {
@@ -94,26 +141,36 @@ function float(max, min = 0) {
 
 /**
  * Random domain name.
- * @param {array} domains 
+ * @param {array} domains
  * @returns {string} domain name
  */
-function domainName(domains = ['gov', 'com', 'xyz', 'net', 'org', 'uk', 'org', 'hk', 'edu', 'io', 'biz', 'info', 'eu', 'co', 'mil', 'es', 'tv', 'me', 'mobi', 'id', 'it', 'int', 'ru', 'cc', 'ch', 'arpa', 'de', 'help', 'am', 'ai', 'us', 'ws', 'pt', 'ca', 'be', 'md', 'fm', 'sc', 'nu', 'au']) {
+function domainName(domains = DOMAINS) {
   if (!Array.isArray(domains)) {
     throw new TypeError('domains must be an array')
   }
-  return `${string(number(15, 3), 'abcdefghijklmnopqrstuvwxyz1234567890-_')}.${fromArray(domains)}`
+  return `${string(
+    number(15, 3),
+    'abcdefghijklmnopqrstuvwxyz1234567890-_'
+  )}.${fromArray(domains)}`
 }
 
 /**
- * Random email with domain 
- * @param {string} domain 
+ * Random email with domain
+ * @param {string} domain
  * @returns {string} email
  */
 function email(domain) {
   if (typeof domain != 'string') {
     throw new TypeError('domain must be a string')
   }
-  return string(number(12, 4), 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') + '@' + domain
+  return (
+    string(
+      number(12, 4),
+      'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    ) +
+    '@' +
+    domain
+  )
 }
 
 /**
@@ -133,7 +190,7 @@ function ip() {
 
 /**
  * Shuffles array.
- * @param {array} array 
+ * @param {array} array
  * @returns {array} array
  */
 function shuffleArray(array) {
@@ -141,8 +198,7 @@ function shuffleArray(array) {
     throw new TypeError('array must be an array')
   }
   for (let i = array.length - 1; i > 0; i--) {
-    const j = number(i)
-    [array[i], array[j]] = [array[j], array[i]]
+    const j = (number(i)[(array[i], array[j])] = [array[j], array[i]])
   }
 
   return array
@@ -153,7 +209,10 @@ function shuffleArray(array) {
  * @returns {string} twitter username
  */
 function twitterUser() {
-  return `@${string(number(15, 4), 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_')}`
+  return '@' + string(
+    number(15, 4),
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'
+  )
 }
 
 /**
@@ -182,5 +241,5 @@ module.exports = {
   ip,
   shuffleArray,
   twitterUser,
-  date
+  date,
 }
