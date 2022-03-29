@@ -1,3 +1,10 @@
+# 3.1.1
+
+Released 2022-3-29
+
+- Makes `string` not return an array.
+- Updated JSDoc and README.
+
 # 3.1.0
 
 Released 2022-3-28

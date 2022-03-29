@@ -29,7 +29,7 @@ function string(length, chars = ALPHABET) {
   } else if (typeof chars != 'string') {
     throw new TypeError('chars must be a string')
   }
-  return Array.from({ length: length }, () => chars[number(chars.length - 1)])
+  return Array.from({ length: length }, () => chars[number(chars.length - 1)]).join('')
 }
 
 /**
@@ -94,7 +94,7 @@ function email(domain) {
   if (typeof domain != 'string') {
     throw new TypeError('domain must be a string')
   }
-  return string(number(12, 4), ALPHABET) + '@' + domain
+  return string(number(12, 4)) + '@' + domain
 }
 
 /**
