@@ -104,6 +104,7 @@ function email(domain) {
 function coin() {
   return fromArray(['heads', 'tails'])
 }
+
 /**
  * Random IP address.
  * @returns {string} ip address

@@ -1,6 +1,5 @@
 # hgdfhjvysger
 
-## What is this?
 pseudo random functions
 
 ## Installation
