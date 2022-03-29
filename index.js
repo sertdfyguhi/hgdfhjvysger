@@ -2,10 +2,10 @@ const DOMAINS = ['ac', 'ad', 'ae', 'af', 'ag', 'ai', 'al', 'am', 'ao', 'aq', 'ar
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 /**
- * Random number from max to min.
+ * Random number between min and max (inclusive).
  * @param {number} max
  * @param {number} min
- * @returns {number} random number from max to min
+ * @returns {number} random number between min and max (inclusive)
  */
 function number(max, min = 0) {
   if (typeof min != 'number' || typeof max != 'number') {
@@ -61,10 +61,10 @@ function boolean() {
 }
 
 /**
- * Random float from min to max.
+ * Random float between min and max (inclusive).
  * @param {number} max
  * @param {number} min
- * @returns {number} float from min to max
+ * @returns {number} float between min and max (inclusive)
  */
 function float(max, min = 0) {
   return number(max, min) + Math.random()
