@@ -1,7 +1,7 @@
 {
   "name": "hgdfhjvysger",
   "version": "3.2.0",
-  "description": "pseudo random functions",
+  "description": "A library to generate pseudo-random values.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     "random",
     "randomize",
     "randomizing",
-    "pseudo-random",
+    "pseudo-random"
   ],
   "author": "sertdfyguhi",
   "license": "MIT"
