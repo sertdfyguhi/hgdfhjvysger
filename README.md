@@ -1,6 +1,6 @@
 # hgdfhjvysger
 
-pseudo random functions
+A library to generate pseudo-random values.
 
 ## Installation
 
@@ -19,18 +19,20 @@ npm install hgdfhjvysger
 ## Example
 
 ```js
-const hgdfhjvysger = require('hgdfhjvysger')
+const random = require('hgdfhjvysger');
 
-hgdfhjvysger.string(5, 'abcde') // returns string with 5 random characters from 'abcde'
-hgdfhjvysger.fromArray([1, 2, 3, 4, 5]) // returns random value from [1, 2, 3, 4, 5]
-hgdfhjvysger.number(5) // returns random number between 0 and 5 (inclusive)
-hgdfhjvysger.color.hex() // returns a random hex color in css
-hgdfhjvysger.coin() // returns 'heads' or 'tails'
+random.string(5, 'abcde'); // returns string with 5 random characters from 'abcde'
+random.fromArray([1, 2, 3, 4, 5]); // returns random value from [1, 2, 3, 4, 5]
+random.number(5); // returns random number between 0 and 5 (inclusive)
+random.color.hex(); // returns a random hex color in css
+random.coin(); // returns 'heads' or 'tails'
 ```
 
 ## Links
+
 - [Github](https://github.com/sertdfyguhi)
 - Discord: sertdfyguhi#5971
 
 ## Changelog
+
 https://github.com/sertdfyguhi/hgdfhjvysger/blob/main/CHANGELOG.md

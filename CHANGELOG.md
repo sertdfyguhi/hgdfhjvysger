@@ -1,3 +1,10 @@
+# 3.2.0
+
+Released 2023-4-14
+
+- Added `hsv` and `asArray` parameter to color functions.
+- Cleaned up and improved JSDoc.
+
 # 3.1.1
 
 Released 2022-3-29
@@ -25,7 +32,7 @@ Released 2022-3-26
 
 - Refactored the code.
 - Added JSdoc.
-- Removed 
+- Removed
   - `randomGender`
   - `randomFalsy`
   - `randomTime`
