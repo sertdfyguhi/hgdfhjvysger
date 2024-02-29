@@ -1,3 +1,13 @@
+# 3.3.0
+
+Released 2024-2-29
+
+- Added `casing` parameter to `alphabet` function.
+- Added
+  - `numeric`
+  - `natural`
+  - `negative`
+
 # 3.2.0
 
 Released 2023-4-14

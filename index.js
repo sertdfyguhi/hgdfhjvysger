@@ -1,278 +1,48 @@
-const DOMAINS = [
-  'ac',
-  'ad',
-  'ae',
-  'af',
-  'ag',
-  'ai',
-  'al',
-  'am',
-  'ao',
-  'aq',
-  'ar',
-  'as',
-  'at',
-  'au',
-  'aw',
-  'ax',
-  'az',
-  'ba',
-  'bb',
-  'bd',
-  'be',
-  'bf',
-  'bg',
-  'bh',
-  'bi',
-  'bj',
-  'bm',
-  'bn',
-  'bo',
-  'bq',
-  'br',
-  'bs',
-  'bt',
-  'bw',
-  'by',
-  'bz',
-  'ca',
-  'cc',
-  'cd',
-  'cf',
-  'cg',
-  'ch',
-  'ci',
-  'ck',
-  'cl',
-  'cm',
-  'cn',
-  'co',
-  'cr',
-  'cu',
-  'cv',
-  'cw',
-  'cx',
-  'cy',
-  'cz',
-  'de',
-  'dj',
-  'dk',
-  'dm',
-  'do',
-  'dz',
-  'ec',
-  'ee',
-  'eg',
-  'eh',
-  'er',
-  'es',
-  'et',
-  'eu',
-  'fi',
-  'fj',
-  'fk',
-  'fm',
-  'fo',
-  'fr',
-  'ga',
-  'gd',
-  'ge',
-  'gf',
-  'gg',
-  'gh',
-  'gi',
-  'gl',
-  'gm',
-  'gn',
-  'gp',
-  'gq',
-  'gr',
-  'gs',
-  'gt',
-  'gu',
-  'gw',
-  'gy',
-  'hk',
-  'hm',
-  'hn',
-  'hr',
-  'ht',
-  'hu',
-  'id',
-  'ie',
-  'il',
-  'im',
-  'in',
-  'io',
-  'iq',
-  'ir',
-  'is',
-  'it',
-  'je',
-  'jm',
-  'jo',
-  'jp',
-  'ke',
-  'kg',
-  'kh',
-  'ki',
-  'km',
-  'kn',
-  'kp',
-  'kr',
-  'kw',
-  'ky',
-  'kz',
-  'la',
-  'lb',
-  'lc',
-  'li',
-  'lk',
-  'lr',
-  'ls',
-  'lt',
-  'lu',
-  'lv',
-  'ly',
-  'ma',
-  'mc',
-  'md',
-  'me',
-  'mg',
-  'mh',
-  'mk',
-  'ml',
-  'mm',
-  'mn',
-  'mo',
-  'mp',
-  'mq',
-  'mr',
-  'ms',
-  'mt',
-  'mu',
-  'mv',
-  'mw',
-  'mx',
-  'my',
-  'mz',
-  'na',
-  'nc',
-  'ne',
-  'nf',
-  'ng',
-  'ni',
-  'nl',
-  'no',
-  'np',
-  'nr',
-  'nu',
-  'nz',
-  'om',
-  'pa',
-  'pe',
-  'pf',
-  'pg',
-  'ph',
-  'pk',
-  'pl',
-  'pm',
-  'pn',
-  'pr',
-  'ps',
-  'pt',
-  'pw',
-  'py',
-  'qa',
-  're',
-  'ro',
-  'rs',
-  'ru',
-  'rw',
-  'sa',
-  'sb',
-  'sc',
-  'sd',
-  'se',
-  'sg',
-  'sh',
-  'si',
-  'sk',
-  'sl',
-  'sm',
-  'sn',
-  'so',
-  'sr',
-  'ss',
-  'st',
-  'su',
-  'sv',
-  'sx',
-  'sy',
-  'sz',
-  'tc',
-  'td',
-  'tf',
-  'tg',
-  'th',
-  'tj',
-  'tk',
-  'tl',
-  'tm',
-  'tn',
-  'to',
-  'tr',
-  'tt',
-  'ug',
-  'tv',
-  'us',
-  'tw',
-  'uz',
-  'tz',
-  'vc',
-  'ua',
-  'vg',
-  'uk',
-  'vn',
-  'uy',
-  'wf',
-  'va',
-  'ye',
-  've',
-  'za',
-  'vi',
-  'zw',
-  'vu',
-  'ws',
-  'yt',
-  'zm',
-  'com',
-  'net',
-  'xyz',
-  'gov',
-  'edu',
-  'org',
-  'info',
-  'help',
-  'io',
-  'app',
-];
-const ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const { DOMAINS, ALPHABET, ALPHABET_ALLCASE, NUMERIC } = require("./constants");
+
+/**
+ * @typedef {"lower" | "upper" | "both"} AlphabetCasing
+ */
+
+/**
+ * Random float between 0.0 and 1.0 (inclusive).
+ * @returns {number} Random number.
+ */
+function random() {
+  return Math.random();
+}
 
 /**
  * Random number between min and max (inclusive).
- * @param {number} max The maximum value (inclusive).
- * @param {number} [min=0] THe minimum value (inclusive).
+ * @param {number} [max=Number.MAX_SAFE_INTEGER] The maximum value (inclusive).
+ * @param {number} [min=Number.MIN_SAFE_INTEGER] THe minimum value (inclusive).
  * @returns {number} Random number.
  */
-function number(max, min = 0) {
-  if (typeof min != 'number' || typeof max != 'number') {
-    throw new TypeError('min and max must be a number');
+function number(max = Number.MAX_SAFE_INTEGER, min = Number.MIN_SAFE_INTEGER) {
+  if (typeof min != "number" || typeof max != "number") {
+    throw new TypeError("min and max must be a number");
   }
+
   return (
-    Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
+    Math.floor(random() * (Math.floor(max) - Math.ceil(min) + 1)) +
     Math.ceil(min)
   );
+}
+
+/**
+ * Random natural number. (0 to 9007199254740991)
+ * @returns {number} Random natural number.
+ */
+function natural() {
+  return number(Number.MAX_SAFE_INTEGER, 0);
+}
+
+/**
+ * Random negative number. (-9007199254740991 to 0)
+ * @returns {number} Random negative number.
+ */
+function negative() {
+  return number(0, Number.MIN_SAFE_INTEGER);
 }
 
 /**
@@ -282,16 +52,13 @@ function number(max, min = 0) {
  * @returns {string} Random string from chars.
  */
 function string(length, chars = ALPHABET) {
-  if (typeof length != 'number') {
-    throw new TypeError('length must be a number');
-  } else if (typeof chars != 'string') {
-    throw new TypeError('chars must be a string');
+  if (typeof length != "number") {
+    throw new TypeError("length must be a number");
+  } else if (typeof chars != "string") {
+    throw new TypeError("chars must be a string");
   }
 
-  return Array.from(
-    { length: length },
-    () => chars[number(chars.length - 1)]
-  ).join('');
+  return Array.from({ length }, () => chars[number(chars.length - 1)]).join("");
 }
 
 /**
@@ -301,17 +68,42 @@ function string(length, chars = ALPHABET) {
  */
 function fromArray(array) {
   if (!Array.isArray(array)) {
-    throw new TypeError('array must be an array');
+    throw new TypeError("array must be an array");
   }
   return array[number(array.length - 1)];
 }
 
 /**
  * Random letter in the alphabet.
- * @returns {string} Random letter in the alphabet.
+ * @param {AlphabetCasing} [casing="lower"]
+ * @returns {string} Random letter.
  */
-function alphabet() {
-  return fromArray(ALPHABET.split());
+function alphabet(casing = "lower") {
+  if (typeof casing !== "string") {
+    return new TypeError("casing must be a string");
+  }
+
+  switch (casing.toLowerCase()) {
+    case "lower":
+      return fromArray(ALPHABET.split());
+
+    case "upper":
+      return fromArray(ALPHABET.split()).toUpperCase();
+
+    case "both":
+      return fromArray(ALPHABET_ALLCASE.split());
+
+    default:
+      throw new TypeError('casing is not "lower", "upper" or "both"');
+  }
+}
+
+/**
+ * Random numeric value.
+ * @returns {string} Random numeric value.
+ */
+function numeric() {
+  return fromArray(NUMERIC);
 }
 
 /**
@@ -319,7 +111,7 @@ function alphabet() {
  * @returns {boolean} True or false.
  */
 function boolean() {
-  return fromArray([true, false]);
+  return random() >= 0.5;
 }
 
 /**
@@ -329,7 +121,7 @@ function boolean() {
  * @returns {number} Random float.
  */
 function float(max, min = 0) {
-  return number(max, min) + Math.random();
+  return number(max, min) + random();
 }
 
 /**
@@ -338,12 +130,12 @@ function float(max, min = 0) {
  */
 function domainName() {
   if (!Array.isArray(DOMAINS)) {
-    throw new TypeError('domains must be an array');
+    throw new TypeError("domains must be an array");
   }
 
   return `${string(
     number(15, 3),
-    'abcdefghijklmnopqrstuvwxyz1234567890-_'
+    "abcdefghijklmnopqrstuvwxyz1234567890-_",
   )}.${fromArray(DOMAINS)}`;
 }
 
@@ -353,10 +145,11 @@ function domainName() {
  * @returns {string} Random email.
  */
 function email(domain) {
-  if (typeof domain != 'string') {
-    throw new TypeError('domain must be a string');
+  if (typeof domain != "string") {
+    throw new TypeError("domain must be a string");
   }
-  return string(number(12, 4)) + '@' + domain;
+
+  return string(number(12, 4)) + "@" + domain;
 }
 
 /**
@@ -364,7 +157,7 @@ function email(domain) {
  * @returns {string} Heads or tails.
  */
 function coin() {
-  return fromArray(['heads', 'tails']);
+  return fromArray(["heads", "tails"]);
 }
 
 /**
@@ -382,7 +175,7 @@ function ip() {
  */
 function shuffleArray(array) {
   if (!Array.isArray(array)) {
-    throw new TypeError('array must be an array');
+    throw new TypeError("array must be an array");
   }
 
   for (let i = array.length - 1; i > 0; i--) {
@@ -397,7 +190,7 @@ function shuffleArray(array) {
  * @returns {string} Random twitter username.
  */
 function twitterUser() {
-  return '@' + string(number(15, 4), ALPHABET + '0123456789_');
+  return "@" + string(number(15, 4), ALPHABET + "0123456789_");
 }
 
 /**
@@ -415,7 +208,7 @@ function date() {
  * @returns {string} Random Hex color.
  */
 function hex(noHashtag = false) {
-  return (noHashtag ? '' : '#') + string(6, 'abcdef1234567890');
+  return (noHashtag ? "" : "#") + string(6, "abcdef1234567890");
 }
 
 /**
@@ -460,15 +253,18 @@ function cmyk(asArray = false) {
   return asArray
     ? [number(100), number(100), number(100), number(100)]
     : `cmyk(${number(100)}%, ${number(100)}%, ${number(100)}%, ${number(
-        100
+        100,
       )}%)`;
 }
 
 module.exports = {
   number,
+  natural,
+  negative,
   string,
   fromArray,
   alphabet,
+  numeric,
   boolean,
   float,
   domainName,

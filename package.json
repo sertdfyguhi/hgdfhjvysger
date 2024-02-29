@@ -1,6 +1,6 @@
 {
   "name": "hgdfhjvysger",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "A library to generate pseudo-random values.",
   "main": "index.js",
   "scripts": {
@@ -10,12 +10,7 @@
     "type": "git",
     "url": "https://github.com/sertdfyguhi/hgdfhjvysger.git"
   },
-  "keywords": [
-    "random",
-    "randomize",
-    "randomizing",
-    "pseudo-random"
-  ],
+  "keywords": ["random", "randomize", "randomizing", "pseudo-random"],
   "author": "sertdfyguhi",
   "license": "MIT"
 }
