@@ -1,4 +1,10 @@
-const { DOMAINS, ALPHABET, ALPHABET_ALLCASE, NUMERIC } = require("./constants");
+const {
+  DOMAINS,
+  ALPHABET_ALL,
+  ALPHABET_LOWER,
+  ALPHABET_UPPER,
+  NUMERIC,
+} = require("./constants");
 
 /**
  * @typedef {"lower" | "upper" | "both"} AlphabetCasing
@@ -85,13 +91,13 @@ function alphabet(casing = "lower") {
 
   switch (casing.toLowerCase()) {
     case "lower":
-      return fromArray(ALPHABET.split());
+      return fromArray(ALPHABET_LOWER.split());
 
     case "upper":
-      return fromArray(ALPHABET.split()).toUpperCase();
+      return fromArray(ALPHABET_UPPER.split());
 
     case "both":
-      return fromArray(ALPHABET_ALLCASE.split());
+      return fromArray(ALPHABET_ALL.split());
 
     default:
       throw new TypeError('casing is not "lower", "upper" or "both"');
@@ -258,6 +264,7 @@ function cmyk(asArray = false) {
 }
 
 module.exports = {
+  random,
   number,
   natural,
   negative,

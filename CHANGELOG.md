@@ -1,3 +1,10 @@
+# 3.3.1
+
+Released 2024-3-01
+
+- Added `random`
+- Fixed bug in `alphabet`
+
 # 3.3.0
 
 Released 2024-2-29

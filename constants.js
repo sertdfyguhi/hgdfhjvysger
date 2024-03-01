@@ -257,13 +257,15 @@ const DOMAINS = [
   "io",
   "app",
 ];
-const ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const ALPHABET_ALLCASE = ALPHABET + ALPHABET.toUpperCase();
+const ALPHABET_ALL = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const ALPHABET_LOWER = "abcdefghijklmnopqrstuvwxyz";
+const ALPHABET_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const NUMERIC = "1234567890";
 
 module.exports = {
   DOMAINS,
-  ALPHABET,
-  ALPHABET_ALLCASE,
+  ALPHABET_ALL,
+  ALPHABET_LOWER,
+  ALPHABET_UPPER,
   NUMERIC,
 };
