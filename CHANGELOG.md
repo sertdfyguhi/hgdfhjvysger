@@ -1,3 +1,9 @@
+# 3.3.2
+
+Released 2024-3-02
+
+- Fixed bug in `alphabet`
+
 # 3.3.1
 
 Released 2024-3-01

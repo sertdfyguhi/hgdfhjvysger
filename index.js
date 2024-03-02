@@ -68,15 +68,16 @@ function string(length, chars = ALPHABET) {
 }
 
 /**
- * Random value from array.
- * @param {array} array The array to choose from.
- * @returns {any} Random value from array.
+ * Random value from array or string.
+ * @param {array|string} array The array or string to choose from.
+ * @returns {any} Random value.
  */
 function fromArray(array) {
-  if (!Array.isArray(array)) {
-    throw new TypeError("array must be an array");
+  if (!Array.isArray(array) && typeof array !== "string") {
+    throw new TypeError("array must be an array or string");
   }
-  return array[number(array.length - 1)];
+
+  return array[number(array.length - 1, 0)];
 }
 
 /**
@@ -91,13 +92,13 @@ function alphabet(casing = "lower") {
 
   switch (casing.toLowerCase()) {
     case "lower":
-      return fromArray(ALPHABET_LOWER.split());
+      return fromArray(ALPHABET_LOWER);
 
     case "upper":
-      return fromArray(ALPHABET_UPPER.split());
+      return fromArray(ALPHABET_UPPER);
 
     case "both":
-      return fromArray(ALPHABET_ALL.split());
+      return fromArray(ALPHABET_ALL);
 
     default:
       throw new TypeError('casing is not "lower", "upper" or "both"');
@@ -141,7 +142,7 @@ function domainName() {
 
   return `${string(
     number(15, 3),
-    "abcdefghijklmnopqrstuvwxyz1234567890-_",
+    "abcdefghijklmnopqrstuvwxyz1234567890-_"
   )}.${fromArray(DOMAINS)}`;
 }
 
@@ -259,7 +260,7 @@ function cmyk(asArray = false) {
   return asArray
     ? [number(100), number(100), number(100), number(100)]
     : `cmyk(${number(100)}%, ${number(100)}%, ${number(100)}%, ${number(
-        100,
+        100
       )}%)`;
 }
 
